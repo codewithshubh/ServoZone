@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_home"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        app:cardCornerRadius="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="5dp"
+        app:cardUseCompatPadding="true">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/iv_service_category"
+                    android:layout_width="130dp"
+                    android:layout_height="90dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/placeholder"
+                    />
+
+
+                <RelativeLayout
+                    android:id="@+id/layout_mov"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/iv_service_category"
+                    android:layout_margin="1dp"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_service_category_title"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:text="Window AC euef eifnef"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:id="@+id/service_category_avi"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="28dp"
+                    android:visibility="visible"
+                    app:indicatorColor="@color/azureBlue"
+                    style="@style/AVLoadingIndicatorView"
+                    app:indicatorName="BallSpinFadeLoaderIndicator"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
+

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codewithshubh.servozone">
+
+    <uses-feature android:name="android.hardware.wifi" />
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:name="com.codewithshubh.servozone.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.codewithshubh.servozone.Activity.ImagePickerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.codewithshubh.servozone.Activity.MyNotificationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.codewithshubh.servozone.Activity.SplashActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.codewithshubh.servozone.Activity.BookingDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.codewithshubh.servozone.Activity.SelectAddressActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.codewithshubh.servozone.Activity.EditAddressActivity"
+            android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.codewithshubh.servozone.Activity.AddNewAddressActivity"
+            android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait"/>
+        <activity android:name="com.codewithshubh.servozone.Activity.MyAddressActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.codewithshubh.servozone.Activity.BookServiceActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.codewithshubh.servozone.Activity.ServiceActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.codewithshubh.servozone.Activity.EditProfileActivity"
+            android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.codewithshubh.servozone.Activity.CreateProfileActivity"
+            android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.codewithshubh.servozone.Activity.LoginActivity"
+            android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.codewithshubh.servozone.Activity.MainActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- cache directory file provider paths -->
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name="com.codewithshubh.servozone.Service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/toolbar_icon" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layout_selectaddress_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"
+        android:elevation="6dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/layout_selectaddress_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            >
+
+            <RadioButton
+                android:id="@+id/layout_selectaddress_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="15dp"/>
+            <RelativeLayout
+                android:layout_toRightOf="@+id/layout_selectaddress_rb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/layout_selectaddress_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:text="Shubham Raj"/>
+                    <TextView
+                        android:id="@+id/layout_selectaddress_address_full"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="110dp"
+                        android:textSize="13sp"
+                        android:text="2E, 2nd Floor, Joydeep Apartment, Thakdari Road, Kestopur, Mission Bazaar, New Town, West Bengal - 700102"/>
+
+                    <TextView
+                        android:id="@+id/layout_selectaddress_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:text="7059911586"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_below="@+id/layout_selectaddress_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/divider_light"
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

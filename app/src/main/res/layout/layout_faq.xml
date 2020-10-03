@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_faq_cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="6dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/layout_faq_ques_rel"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/layout_faq_expand_iv"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/expand"/>
+
+            <TextView
+                android:id="@+id/layout_faq_ques_tv"
+                android:layout_toRightOf="@+id/layout_faq_expand_iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:textSize="16sp"
+                android:textColor="@color/azureBlue"
+                android:textStyle="bold"
+                android:text="This is your first FAQ Question?" />
+
+            <ImageView
+                android:layout_below="@+id/layout_faq_ques_tv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:src="@drawable/divider_light"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_faq_ans_rel"
+            android:layout_below="@+id/layout_faq_ques_rel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/layout_faq_ans_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textSize="14sp"
+                android:drawablePadding="10dp"
+                android:text="This is your first FAQ Answer." />
+
+            <ImageView
+                android:layout_below="@+id/layout_faq_ans_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/divider_light"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

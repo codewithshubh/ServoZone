@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">ServoZone</string>
+
+    <!--Bottom Navbar-->
+    <string name="bottom_nav_home">Home</string>
+    <string name="bottom_nav_help">Need Help?</string>
+    <string name="bottom_nav_booking">My Booking</string>
+    <string name="bottom_nav_profile">My Profile</string>
+
+    <string name="booking_successful_msg">Yay! Your service has been booked. Your booking will be confirmed within 24 hours.
+        You may get a call from our customer executive once the booking is confirmed.
+        You can track the booking status in your \'My Booking\' section.</string>
+
+    <!-- Toast message for back press -->
+    <string name="toast_backpress">Please click BACK again to exit</string>
+
+    <!-- Fragments toolbar titles -->
+    <string name="home_fragment_toolbar_title">ServoZone</string>
+    <string name="help_fragment_toolbar_title">Help &amp; FAQs</string>
+    <string name="profile_fragment_toolbar_title">My Profile</string>
+    <string name="booking_fragment_toolbar_title">My Booking</string>
+    <string name="service_provider_name">SERVOZONE</string>
+    <string name="choose_dateslot_msg">Select Service Date</string>
+    <string name="choose_timeslot_msg">Choose a Slot</string>
+
+    <string name="time_slot1">9 AM - 12 PM</string>
+    <string name="time_slot2">12 AM - 3 PM</string>
+    <string name="time_slot3">3 PM - 6 PM</string>
+    <string name="time_slot4">6 AM - 9 PM</string>
+    <string name="out_of_service_area">Your address is out of serviceable area. Contact us to get our services in your area</string>
+    <string name="inactive_user_msg">Your account is temporarily disabled. Contact admin for more details.</string>
+    <string name="share_msg">Hey there! Download our app to book a service and get it done at your doorstep.
+        Click on the link below to get the app from google playstore \n\n</string>
+
+    <string name="dialog_permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
+    <string name="dialog_permission_title">Grant Permissions</string>
+    <string name="go_to_settings">GOTO SETTINGS</string>
+    <string name="lbl_set_profile_photo">Set profile image</string>
+    <string name="toast_image_intent_null">Image picker option is missing!</string>
+    <string name="lbl_take_camera_picture">Take a picture</string>
+    <string name="lbl_choose_from_gallery">Choose from gallery</string>
+    <string name="no_internet_msg">You are not connected to internet. To use our app, connect your device to internet. Once the connection is stablished, this dialog will automatically disappear.</string>
+    <string name="select_address_activity_titlebar_title">Select Address</string>
+    <string name="confirm_msg">Confirmed and In Progress</string>
+    <string name="booking_receive_msg">Booking Received</string>
+    <string name="sm_assign_msg">Serviceman Assigned</string>
+    <string name="booking_complete_msg">Completed</string>
+</resources>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "20865504628",
+    "firebase_url": "https://servozoneapp.firebaseio.com",
+    "project_id": "servozoneapp",
+    "storage_bucket": "servozoneapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20865504628:android:fb2b9a586201d733f50821",
+        "android_client_info": {
+          "package_name": "com.codewithshubh.servozone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20865504628-is9tgnjvkqn3i83gk8lhmiii5iifnsik.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codewithshubh.servozone",
+            "certificate_hash": "80e42eea45f40ae1bbe8248f085bf3dc76b0ed09"
+          }
+        },
+        {
+          "client_id": "20865504628-h2s1695aa2h1vno6oui4mh5d2ufc6bb0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQsKjFmaFUGiBodpg6QvGYZq_nRGw6f9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20865504628-h2s1695aa2h1vno6oui4mh5d2ufc6bb0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

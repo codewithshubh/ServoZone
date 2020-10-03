@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.BookingDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/activity_booking_detail_appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/activity_booking_detail_toolbar"
+                android:minHeight="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:titleMarginStart="30dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/activity_booking_detail_toolbar_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/left_arrow_light"/>
+
+                    <TextView
+                        android:id="@+id/activity_booking_detail_toolbar_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp"
+                        android:layout_toRightOf="@+id/activity_booking_detail_toolbar_icon"
+                        android:fontFamily="@font/aclonica"
+                        android:text="Booking Details"
+                        android:textColor="@color/azureBlue"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/divider_light"/>
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/activity_booking_detail_swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/activity_booking_detail_nsv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eee"
+                android:layout_gravity="fill_vertical"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/activity_booking_detail_cv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_bookingid_title_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:text="Booking ID - "
+                                    />
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_bookingid_tv"
+                                    android:layout_toRightOf="@+id/activity_booking_detail_bookingid_title_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:text="ON100001"
+                                    />
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:src="@drawable/divider_light"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <LinearLayout
+                                    android:id="@+id/activity_booking_detail_heading_lin"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="130dp"
+                                    android:layout_centerVertical="true"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:id="@+id/activity_booking_detail_category_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14sp"
+                                        android:textColor="@color/black"
+                                        android:text="Split AC Servicing" />
+
+                                    <TextView
+                                        android:id="@+id/activity_booking_detail_service_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="12sp"
+                                        android:text="AC  Repair &amp; Services" />
+
+                                    <TextView
+                                        android:id="@+id/activity_booking_detail_provider_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:text="Service Provider: Topline Services" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:layout_marginTop="10dp">
+
+                                        <TextView
+                                            android:id="@+id/activity_booking_detail_status_title_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:textSize="14sp"
+                                            android:textColor="@color/azureBlue"
+                                            android:text="Status: "
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/activity_booking_detail_status_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:textSize="16sp"
+                                            android:paddingRight="15dp"
+                                            android:paddingLeft="15dp"
+                                            android:paddingTop="5dp"
+                                            android:paddingBottom="5dp"
+                                            android:background="@drawable/btn_pending"
+                                            android:textColor="@color/white"
+                                            android:text="Pending"
+                                            />
+
+                                    </LinearLayout>
+
+
+
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    app:cardCornerRadius="8dp"
+                                    android:layout_margin="4dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:elevation="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/activity_booking_detail_image_iv"
+                                        android:layout_width="120dp"
+                                        android:layout_height="100dp"
+                                        android:src="@drawable/default_image"
+                                        android:scaleType="fitXY"/>
+                                </androidx.cardview.widget.CardView>
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:src="@drawable/divider_light"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RelativeLayout
+                                    android:id="@+id/rel_status"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="20dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingBottom="10dp"
+                                    android:paddingRight="10dp"
+                                    android:layout_gravity="center">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+                                        <RelativeLayout
+                                            android:id="@+id/activity_booking_detail_receive_rel"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:id="@+id/rel2_iv1"
+                                                android:layout_marginTop="3dp"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp"
+                                                android:src="@drawable/dot_green"/>
+                                            <ImageView
+                                                android:layout_below="@+id/rel2_iv1"
+                                                android:layout_width="2dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginLeft="4dp"
+                                                android:src="@drawable/divider_green"/>
+                                            <LinearLayout
+                                                android:layout_toRightOf="@+id/rel2_iv1"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+
+                                                <TextView
+                                                    android:id="@+id/activity_booking_detail_receive_title"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="12sp"
+                                                    android:text="@string/booking_receive_msg"/>
+                                                <TextView
+                                                    android:id="@+id/activity_booking_detail_receive_time"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:text="13/04/2020, 02:35 PM"/>
+
+                                            </LinearLayout>
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:id="@+id/activity_booking_detail_confirm_rel"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:id="@+id/activity_booking_detail_confirm_bullet"
+                                                android:layout_marginTop="3dp"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp"
+                                                android:src="@drawable/dot_green"/>
+                                            <ImageView
+                                                android:id="@+id/activity_booking_detail_confirm_line"
+                                                android:layout_below="@+id/activity_booking_detail_confirm_bullet"
+                                                android:layout_width="2dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginLeft="4dp"
+                                                android:src="@drawable/divider_green"/>
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_toRightOf="@+id/activity_booking_detail_confirm_bullet"
+                                                android:orientation="vertical">
+
+                                                <TextView
+                                                    android:id="@+id/activity_booking_detail_confirm_title"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="12sp"
+                                                    android:text="@string/confirm_msg"/>
+                                                <TextView
+                                                    android:id="@+id/activity_booking_detail_confirm_time"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:text="13/04/2020, 02:35 PM"/>
+
+                                            </LinearLayout>
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:id="@+id/activity_booking_detail_sm_rel"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:id="@+id/activity_booking_detail_sm_bullet"
+                                                android:layout_marginTop="3dp"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp"
+                                                android:src="@drawable/dot_green"/>
+                                            <ImageView
+                                                android:id="@+id/activity_booking_detail_sm_line"
+                                                android:layout_below="@+id/activity_booking_detail_sm_bullet"
+                                                android:layout_width="2dp"
+                                                android:layout_height="30dp"
+                                                android:layout_marginLeft="4dp"
+                                                android:src="@drawable/divider_green"/>
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginBottom="8dp"
+                                                android:layout_toRightOf="@+id/activity_booking_detail_sm_bullet"
+                                                android:orientation="vertical">
+
+                                                <TextView
+                                                    android:id="@+id/activity_booking_detail_sm_title"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="12sp"
+                                                    android:text="@string/sm_assign_msg"/>
+                                                <TextView
+                                                    android:id="@+id/activity_booking_detail_sm_time"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:text="13/04/2020, 02:35 PM"/>
+
+                                            </LinearLayout>
+                                        </RelativeLayout>
+                                        <RelativeLayout
+                                            android:id="@+id/activity_booking_detail_completed_rel"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content">
+                                            <ImageView
+                                                android:id="@+id/activity_booking_detail_completed_bullet"
+                                                android:layout_marginTop="3dp"
+                                                android:layout_width="10dp"
+                                                android:layout_height="10dp"
+                                                android:src="@drawable/dot_green"/>
+                                            <LinearLayout
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_toRightOf="@+id/activity_booking_detail_completed_bullet"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical">
+                                                <TextView
+                                                    android:id="@+id/activity_booking_detail_complete_title"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="12sp"
+                                                    android:textColor="@color/black"
+                                                    android:text="@string/booking_complete_msg"/>
+                                                <TextView
+                                                    android:id="@+id/activity_booking_detail_complete_time"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:textSize="10sp"
+                                                    android:text="13/04/2020, 02:35 PM"/>
+
+                                            </LinearLayout>
+                                        </RelativeLayout>
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:src="@drawable/divider_light"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:weightSum="2"
+                                    android:divider="@drawable/divider_vertical"
+                                    android:showDividers="middle"
+
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:id="@+id/activity_booking_detail_cancel_lin"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="true"
+                                        android:background="?attr/selectableItemBackground"
+                                        android:gravity="center"
+                                        android:layout_weight="1">
+                                        <TextView
+                                            android:id="@+id/activity_booking_detail_cancel_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingTop="12dp"
+                                            android:paddingBottom="12dp"
+                                            android:textSize="14sp"
+                                            android:textColor="@color/red"
+                                            android:text="Cancel booking"
+                                            />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/activity_booking_detail_needhelp_lin"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="true"
+                                        android:background="?attr/selectableItemBackground"
+                                        android:gravity="center"
+                                        android:layout_weight="1">
+                                        <TextView
+                                            android:id="@+id/activity_booking_detail_needhelp_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:textSize="14sp"
+                                            android:paddingTop="12dp"
+                                            android:paddingBottom="12dp"
+                                            android:textColor="@color/azureBlue"
+                                            android:text="Need Help?"
+                                            />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/activity_booking_detail_cv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_address_title_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="Address Details"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:src="@drawable/divider_light"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        android:id="@+id/activity_booking_detail_address_name_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="16sp"
+                                        android:text="Shubham Raj"/>
+                                    <TextView
+                                        android:id="@+id/activity_booking_detail_address_address_full_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginRight="110dp"
+                                        android:textSize="13sp"
+                                        android:text="2E, 2nd Floor, Joydeep Apartment, Thakdari Road, Kestopur, Mission Bazaar, New Town, West Bengal - 700102"/>
+
+                                    <TextView
+                                        android:id="@+id/activity_booking_detail_address_contact_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:textColor="@color/black"
+                                        android:textSize="13sp"
+                                        android:text="Phone Number: 7059911586"/>
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:src="@drawable/divider_light"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_slot_title_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="Booked Date Slot: "
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp"/>
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_slot_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@+id/activity_booking_detail_slot_title_tv"
+                                    android:text="19/04/2020"
+                                    android:textColor="@color/azureBlue"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/activity_booking_detail_cv3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_query_title_tv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:text="Your Requirement"
+                                    />
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:src="@drawable/divider_light"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/activity_booking_detail_query_tv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/activity_booking_detail_cv4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:elevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_serviceboy_title_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold"
+                                    android:text="Serviceman Details"
+                                    />
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:src="@drawable/divider_light"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingTop="10dp">
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_serviceboy_name_title_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:text="Name: "
+                                    />
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_serviceboy_name_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/activity_booking_detail_serviceboy_name_title_tv"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/azureBlue"
+                                    android:textStyle="bold"
+                                    android:text="Pankaj Kumar Sah"
+                                    />
+
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="15dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="10dp">
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_serviceboy_contact_title_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:text="Contact: "
+                                    />
+
+                                <TextView
+                                    android:id="@+id/activity_booking_detail_serviceboy_contact_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toRightOf="@+id/activity_booking_detail_serviceboy_contact_title_tv"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/azureBlue"
+                                    android:textStyle="bold"
+                                    android:text="+917003040878"
+                                    />
+
+
+
+                            </RelativeLayout>
+
+                            <Button
+                                android:id="@+id/activity_booking_detail_serviceboy_call"
+                                android:layout_width="wrap_content"
+                                android:layout_marginBottom="15dp"
+                                android:layout_height="30dp"
+                                android:textSize="10sp"
+                                android:background="@drawable/btn_blue"
+                                android:layout_marginLeft="15dp"
+                                android:textColor="@color/white"
+                                android:text="Call Now"/>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

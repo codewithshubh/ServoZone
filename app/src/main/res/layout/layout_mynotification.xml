@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_mynotification_cv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:elevation="6dp"
+    android:layout_marginBottom="10dp">
+
+    <RelativeLayout
+            android:id="@+id/layout_mynotification_rel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/layout_mynotification_lin1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:orientation="horizontal">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/layout_mynotification_icon_iv"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/default_image"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/layout_mynotification_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/azureBlue"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:text="This is a demo title"/>
+
+                        <TextView
+                            android:id="@+id/layout_mynotification_message_tv"
+                            android:layout_width="wrap_content"
+                            android:textSize="12sp"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            android:text="This is a demo notification content."/>
+                        <TextView
+                            android:id="@+id/layout_mynotification_time_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="12sp"
+                            android:text="16 hours ago"/>
+                        <Button
+                            android:id="@+id/layout_mynotification_btn_link"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:textSize="12sp"
+                            android:textColor="@color/white"
+                            android:text="Know More"
+                            android:paddingRight="10dp"
+                            android:paddingLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/btn_blue"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/layout_mynotification_image_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/default_image"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+    <!--<ImageView
+        android:id="@+id/divider"
+        android:layout_below="@+id/layout_mynotification_cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/divider"
+        />-->

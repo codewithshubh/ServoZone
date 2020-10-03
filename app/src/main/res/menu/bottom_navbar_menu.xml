@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/bottom_nav_home"
+        android:id="@+id/bottom_navbar_home"
+        android:icon="@drawable/bottom_navbar_home"/>
+    <item android:title="@string/bottom_nav_help"
+        android:id="@+id/bottom_navbar_help"
+        android:icon="@drawable/bottom_navbar_help"/>
+    <item android:title="@string/bottom_nav_booking"
+        android:id="@+id/bottom_navbar_booking"
+        android:icon="@drawable/bottom_navbar_booking"/>
+    <item android:title="@string/bottom_nav_profile"
+        android:id="@+id/bottom_navbar_profile"
+        android:icon="@drawable/bottom_navbar_profile"/>
+</menu>
