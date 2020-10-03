@@ -19,7 +19,9 @@ import android.widget.TextView;
 import com.codewithshubh.servozone.Adapter.NotificationAdapter;
 import com.codewithshubh.servozone.Model.Notification;
 import com.codewithshubh.servozone.R;
+import com.codewithshubh.servozone.Utils.CheckIfLoggedIn;
 import com.codewithshubh.servozone.Utils.MySwipeHelper;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -88,6 +90,8 @@ public class MyNotificationActivity extends AppCompatActivity {
                 clearAllNotification();
             }
         });
+
+        new NetworkCheck(this).noInternetDialog();
     }
 
     private void clearAllNotification() {
@@ -293,5 +297,18 @@ public class MyNotificationActivity extends AppCompatActivity {
             }
         };
         swipeHelper.attachToRecyclerView(recyclerView);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new CheckIfLoggedIn(this).CheckForUser();
     }
 }

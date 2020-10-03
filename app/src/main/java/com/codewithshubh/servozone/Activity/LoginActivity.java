@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.codewithshubh.servozone.Model.User;
 import com.codewithshubh.servozone.R;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -111,6 +112,8 @@ public class LoginActivity extends AppCompatActivity {
                 OnResendCick();
             }
         });
+
+        new NetworkCheck(this).noInternetDialog();
     }
 
     private void OnResendCick() {
@@ -483,5 +486,11 @@ public class LoginActivity extends AppCompatActivity {
         if(view == null)
             view = new View(activity);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
     }
 }

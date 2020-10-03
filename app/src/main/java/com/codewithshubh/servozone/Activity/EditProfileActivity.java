@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import com.codewithshubh.servozone.Model.User;
 import com.codewithshubh.servozone.R;
+import com.codewithshubh.servozone.Utils.CheckIfLoggedIn;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -59,6 +61,8 @@ public class EditProfileActivity extends AppCompatActivity {
                 SaveProfile();
             }
         });
+
+        new NetworkCheck(this).noInternetDialog();
     }
 
     private void OnBackClick() {
@@ -176,5 +180,18 @@ public class EditProfileActivity extends AppCompatActivity {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new CheckIfLoggedIn(this).CheckForUser();
     }
 }

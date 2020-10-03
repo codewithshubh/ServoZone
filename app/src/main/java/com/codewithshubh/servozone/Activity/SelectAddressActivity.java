@@ -21,6 +21,8 @@ import android.widget.TextView;
 import com.codewithshubh.servozone.Adapter.SelectAddressAdapter;
 import com.codewithshubh.servozone.Model.Address;
 import com.codewithshubh.servozone.R;
+import com.codewithshubh.servozone.Utils.CheckIfLoggedIn;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -118,6 +120,8 @@ public class SelectAddressActivity extends AppCompatActivity {
 
         LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver,
                 new IntentFilter(ADDRESS_DETAIL));
+
+        new NetworkCheck(this).noInternetDialog();
     }
 
     public void LoadData() {
@@ -230,4 +234,17 @@ public class SelectAddressActivity extends AppCompatActivity {
             pinCode = intent.getStringExtra(USER_PIN);
         }
     };
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
 }

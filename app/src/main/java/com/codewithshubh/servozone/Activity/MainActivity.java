@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,6 +22,8 @@ import com.codewithshubh.servozone.Fragment.ProfileFragment;
 import com.codewithshubh.servozone.Model.Notification;
 import com.codewithshubh.servozone.R;
 import com.codewithshubh.servozone.Utils.AutoStartHelper;
+import com.codewithshubh.servozone.Utils.CheckIfLoggedIn;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -80,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         openFragment(home);     //setting Home fragment as default fragment to show when MainActivity is opened
+
+        new NetworkCheck(this).noInternetDialog();
     }
 
     private void CountNotificationNumber() {
@@ -253,5 +256,10 @@ public class MainActivity extends AppCompatActivity {
         tv_notification_count = findViewById(R.id.activity_main_toolbar_badge);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
+    }
 
 }

@@ -16,6 +16,8 @@ import android.provider.OpenableColumns;
 import android.util.Log;
 import android.widget.Toast;
 import com.codewithshubh.servozone.R;
+import com.codewithshubh.servozone.Utils.CheckIfLoggedIn;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -75,6 +77,8 @@ public class ImagePickerActivity extends AppCompatActivity {
         } else {
             chooseImageFromGallery();
         }
+
+        new NetworkCheck(this).noInternetDialog();
     }
     public static void showImagePickerOptions(Context context, PickerOptionListener listener) {
         // setup the alert builder
@@ -252,4 +256,16 @@ public class ImagePickerActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
 }

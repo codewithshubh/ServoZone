@@ -171,4 +171,30 @@ public class NetworkCheck {
             Constants.IS_CONNECTED = false;
         }
     }
+
+    public void noInternetDialog(){
+        // Register NetworkCallback -- need to call this when activity starts
+        NetworkCheck network = new NetworkCheck(context);
+        /*
+         * registerNetworkCallback() is available from API-21 and above
+         * But it will show status of all available network. Hence you would
+         * to query onCapabilitiesChanged() to make sure your intended network is active or not.
+         */
+        // network.registerNetworkCallback();
+
+
+        /*
+         * network.registerDefaultNetworkCallback() is available from API-24
+         * Unlike its counterpart, it will only register status of current active network
+         * Hence no need to check with onCapabilitiesChanged(). But downside is that it
+         * is available since API-24 while current recommendation (in 2019) is to maintain
+         * minimum support for API-23 Marshmallo.
+         */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            network.registerDefaultNetworkCallback();
+        }
+        else {
+            network.registerNetworkCallback();
+        }
+    }
 }

@@ -29,6 +29,8 @@ import com.codewithshubh.servozone.Model.ServiceGroup;
 import com.codewithshubh.servozone.Model.ServiceableArea;
 import com.codewithshubh.servozone.Model.User;
 import com.codewithshubh.servozone.R;
+import com.codewithshubh.servozone.Utils.CheckIfLoggedIn;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.codewithshubh.servozone.Utils.NotificationUtils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -161,6 +163,8 @@ public class BookServiceActivity extends AppCompatActivity {
                 OnBookClick();
             }
         });
+
+        new NetworkCheck(this).noInternetDialog();
 
     }
 
@@ -568,5 +572,18 @@ public class BookServiceActivity extends AppCompatActivity {
                 btn_select_address.setText("Change Address");
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new CheckIfLoggedIn(this).CheckForUser();
     }
 }

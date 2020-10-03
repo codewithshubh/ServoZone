@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -14,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import com.codewithshubh.servozone.Model.Address;
 import com.codewithshubh.servozone.R;
+import com.codewithshubh.servozone.Utils.CheckIfLoggedIn;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -59,6 +62,8 @@ public class AddNewAddressActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        new NetworkCheck(this).noInternetDialog();
     }
 
     //This method will add a new address under UserAddress node
@@ -118,6 +123,7 @@ public class AddNewAddressActivity extends AppCompatActivity {
         Map timestamp = new HashMap();  //creating a Hashmap to store timestamp
         timestamp.put("creationTimeStamp", ServerValue.TIMESTAMP);
         myRef.child(address_id).updateChildren(timestamp);  //adding timestamp of creation of the address.
+
     }
 
     private void Init() {
@@ -261,5 +267,18 @@ public class AddNewAddressActivity extends AppCompatActivity {
         if(view == null)
             view = new View(activity);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new CheckIfLoggedIn(this).CheckForUser();
     }
 }

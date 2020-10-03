@@ -32,6 +32,8 @@ import com.codewithshubh.servozone.Model.ServiceCategory;
 import com.codewithshubh.servozone.Model.ServiceGroup;
 import com.codewithshubh.servozone.Model.User;
 import com.codewithshubh.servozone.R;
+import com.codewithshubh.servozone.Utils.CheckIfLoggedIn;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.codewithshubh.servozone.Utils.NotificationUtils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -246,6 +248,8 @@ public class BookingDetailActivity extends AppCompatActivity {
                 OnHelpClick(v);
             }
         });
+
+        new NetworkCheck(this).noInternetDialog();
 
     }
 
@@ -736,5 +740,18 @@ public class BookingDetailActivity extends AppCompatActivity {
             }
         });
         popup.show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new CheckIfLoggedIn(this).CheckForUser();
     }
 }

@@ -130,30 +130,6 @@ public class HomeFragment extends Fragment implements IFirebaseLoadListener {
 
         indicatorLayout = view.findViewById(R.id.slide_indicator_lin);
         bannerHandler = new Handler();
-
-        // Register NetworkCallback -- need to call this when activity starts
-        NetworkCheck network = new NetworkCheck(getActivity());
-        /*
-         * registerNetworkCallback() is available from API-21 and above
-         * But it will show status of all available network. Hence you would
-         * to query onCapabilitiesChanged() to make sure your intended network is active or not.
-         */
-        // network.registerNetworkCallback();
-
-
-        /*
-         * network.registerDefaultNetworkCallback() is available from API-24
-         * Unlike its counterpart, it will only register status of current active network
-         * Hence no need to check with onCapabilitiesChanged(). But downside is that it
-         * is available since API-24 while current recommendation (in 2019) is to maintain
-         * minimum support for API-23 Marshmallo.
-         */
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            network.registerDefaultNetworkCallback();
-        }
-        else {
-            network.registerNetworkCallback();
-        }
     }
 
     private void SetupBanner() {
@@ -265,7 +241,6 @@ public class HomeFragment extends Fragment implements IFirebaseLoadListener {
     public void onPause() {
         super.onPause();
         bannerHandler.removeCallbacks(bannerRunnableForward);
-
     }
 
     @Override
@@ -280,14 +255,6 @@ public class HomeFragment extends Fragment implements IFirebaseLoadListener {
     public void onResume() {
         super.onResume();
         bannerHandler.postDelayed(bannerRunnableForward, 3000);
-
-        NetworkCheck network = new NetworkCheck(getActivity());
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            network.registerDefaultNetworkCallback();
-        }
-        else {
-            network.registerNetworkCallback();
-        }
     }
 
     private Runnable bannerRunnableForward = new Runnable() {

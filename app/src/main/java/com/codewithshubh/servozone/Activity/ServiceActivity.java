@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.codewithshubh.servozone.Adapter.ServiceBookAdapter;
 import com.codewithshubh.servozone.Model.ServiceCategory;
 import com.codewithshubh.servozone.R;
+import com.codewithshubh.servozone.Utils.CheckIfLoggedIn;
+import com.codewithshubh.servozone.Utils.NetworkCheck;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -69,6 +71,8 @@ public class ServiceActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        new NetworkCheck(this).noInternetDialog();
     }
 
     private void Init() {
@@ -146,5 +150,18 @@ public class ServiceActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        new NetworkCheck(this).noInternetDialog();
+        new CheckIfLoggedIn(this).CheckForUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new CheckIfLoggedIn(this).CheckForUser();
     }
 }
